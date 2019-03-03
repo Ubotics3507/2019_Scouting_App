@@ -3,8 +3,8 @@
     <string name="home_welcome_string">Ubotics 2019 Scouting</string>
     <string name="create_pit_data">Create Pit Data</string>
     <string name="create_match_data">Create Match Data</string>
-    <string name="upload_xml">Upload All Data</string>
-    <string name="add_data_to_xml">Add Data</string>
+    <string name="upload">Upload All Data</string>
+    <string name="add_data">Add Data</string>
     <string name="pit_data_home">Pit Data Creator</string>
     <string name="team_number">Team Number</string>
     <string name="hatch_ball_both">Scoring</string>
@@ -14,28 +14,79 @@
     <string name="drive_type">DriveTrain</string>
     <string-array name="team_numbers">
         <item></item>
-        <item>0001</item>
-        <item>0002</item>
-        <item>0003</item>
-        <item>0004</item>
-        <item>0005</item>
-        <item>0006</item>
-        <item>0007</item>
-        <item>0008</item>
-        <item>0009</item>
-        <item>0010</item>
-        <item>0011</item>
-        <item>0012</item>
-        <item>3507</item>
+        <item>31</item>
+        <item>662</item>
+        <item>932</item>
+        <item>1209</item>
+        <item>1410</item>
+        <item>1561</item>
+        <item>1619</item>
+        <item>1750</item>
+        <item>2165</item>
+        <item>2333</item>
+        <item>2341</item>
+        <item>2352</item>
+        <item>2354</item>
+        <item>2359</item>
+        <item>2373</item>
+        <item>2395</item>
+        <item>2398</item>
+        <item>2410</item>
+        <item>2424</item>
+        <item>2461</item>
+        <item>2723</item>
+        <item>2765</item>
+        <item>2773</item>
+        <item>2795</item>
+        <item>2986</item>
+        <item>2996</item>
+        <item>3152</item>
+        <item>3160</item>
+        <item>3163</item>
+        <item>3179</item>
+        <item>3247</item>
+        <item>3457</item>
+        <item>3465</item>
+        <item>3593</item>
+        <item>3612</item>
+        <item>3931</item>
+        <item>4005</item>
+        <item>4293</item>
+        <item>4418</item>
+        <item>4499</item>
+        <item>4500</item>
+        <item>4522</item>
+        <item>4523</item>
+        <item>4550</item>
+        <item>4959</item>
+        <item>5098</item>
+        <item>5550</item>
+        <item>5578</item>
+        <item>5621</item>
+        <item>5730</item>
+        <item>5889</item>
+        <item>5930</item>
+        <item>6026</item>
+        <item>6464</item>
+        <item>6730</item>
+        <item>6800</item>
+        <item>6809</item>
+        <item>6891</item>
+        <item>6900</item>
+        <item>7464</item>
+        <item>7473</item>
+        <item>7744</item>
     </string-array>
     <string-array name="ball_hatch_both">
         <item></item>
+        <item>Neither</item>
         <item>Ball</item>
         <item>Hatch</item>
         <item>Both</item>
     </string-array>
     <string-array name="auto_camera_both">
         <item></item>
+        <item>None</item>
         <item>Autonomous</item>
         <item>Camera</item>
         <item>Both</item>
@@ -48,12 +99,14 @@
     </string-array>
     <string-array name="rocket_reach">
         <item></item>
+        <item>None</item>
         <item>Bottom</item>
         <item>Middle</item>
         <item>Top</item>
     </string-array>
     <string-array name="drive_train">
         <item></item>
+        <item>Other</item>
         <item>4 Wheel WC</item>
         <item>6 Wheel WC</item>
         <item>8 Wheel WC</item>
