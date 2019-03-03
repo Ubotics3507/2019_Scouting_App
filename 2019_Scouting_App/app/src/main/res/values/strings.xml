@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">2019_Scouting_App</string>
+    <string name="home_welcome_string">Ubotics 2019 Scouting</string>
+    <string name="create_pit_data">Create Pit Data</string>
+    <string name="create_match_data">Create Match Data</string>
+    <string name="upload_xml">Upload All Data</string>
+    <string name="add_data_to_xml">Add Data</string>
+    <string name="pit_data_home">Pit Data Creator</string>
+    <string name="team_number">Team Number</string>
+    <string name="hatch_ball_both">Scoring</string>
+    <string name="auto_camera_both">Sandstorm</string>
+    <string name="climb">Climb</string>
+    <string name="rocket_reach">Rocket</string>
+    <string name="drive_type">DriveTrain</string>
+    <string-array name="team_numbers">
+        <item></item>
+        <item>0001</item>
+        <item>0002</item>
+        <item>0003</item>
+        <item>0004</item>
+        <item>0005</item>
+        <item>0006</item>
+        <item>0007</item>
+        <item>0008</item>
+        <item>0009</item>
+        <item>0010</item>
+        <item>0011</item>
+        <item>0012</item>
+        <item>3507</item>
+    </string-array>
+    <string-array name="ball_hatch_both">
+        <item></item>
+        <item>Ball</item>
+        <item>Hatch</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="auto_camera_both">
+        <item></item>
+        <item>Autonomous</item>
+        <item>Camera</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="climb">
+        <item></item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+    </string-array>
+    <string-array name="rocket_reach">
+        <item></item>
+        <item>Bottom</item>
+        <item>Middle</item>
+        <item>Top</item>
+    </string-array>
+    <string-array name="drive_train">
+        <item></item>
+        <item>4 Wheel WC</item>
+        <item>6 Wheel WC</item>
+        <item>8 Wheel WC</item>
+        <item>Mecanum Drive</item>
+        <item>Tank Tread</item>
+    </string-array>
+</resources>
