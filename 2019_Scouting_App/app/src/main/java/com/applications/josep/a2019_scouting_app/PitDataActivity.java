@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class PitDataActivity extends AppCompatActivity {
 
-    String Text_File = "data.txt";
+    String Text_File = "pit_data.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

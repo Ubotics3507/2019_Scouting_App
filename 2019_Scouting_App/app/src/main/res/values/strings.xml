@@ -3,7 +3,7 @@
     <string name="home_welcome_string">Ubotics 2019 Scouting</string>
     <string name="create_pit_data">Create Pit Data</string>
     <string name="create_match_data">Create Match Data</string>
-    <string name="upload">Upload All Data</string>
+    <string name="clear">!Clear All Data!</string>
     <string name="add_data">Add Data</string>
     <string name="pit_data_home">Pit Data Creator</string>
     <string name="match_data_home">Match Data Creator</string>
