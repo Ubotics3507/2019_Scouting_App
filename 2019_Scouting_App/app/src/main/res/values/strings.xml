@@ -6,12 +6,19 @@
     <string name="upload">Upload All Data</string>
     <string name="add_data">Add Data</string>
     <string name="pit_data_home">Pit Data Creator</string>
+    <string name="match_data_home">Match Data Creator</string>
     <string name="team_number">Team Number</string>
+    <string name="match_number">Match Number</string>
     <string name="hatch_ball_both">Scoring</string>
     <string name="auto_camera_both">Sandstorm</string>
     <string name="climb">Climb</string>
     <string name="rocket_reach">Rocket</string>
     <string name="drive_type">DriveTrain</string>
+    <string name="red_alliance">Red Alliance</string>
+    <string name="blue_alliance">Blue Alliance</string>
+    <string name="best_red_team">Best Red Team</string>
+    <string name="best_blue_team">Best Blue Team</string>
+    <string name="winning_team">Winning Team</string>
     <string-array name="team_numbers">
         <item></item>
         <item>31</item>
@@ -47,6 +54,7 @@
         <item>3247</item>
         <item>3457</item>
         <item>3465</item>
+        <item>3507</item>
         <item>3593</item>
         <item>3612</item>
         <item>3931</item>
@@ -76,6 +84,46 @@
         <item>7464</item>
         <item>7473</item>
         <item>7744</item>
+    </string-array>
+    <string-array name="match_num">
+        <item></item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
     </string-array>
     <string-array name="ball_hatch_both">
         <item></item>
@@ -112,5 +160,11 @@
         <item>8 Wheel WC</item>
         <item>Mecanum Drive</item>
         <item>Tank Tread</item>
+    </string-array>
+    <string-array name="winners">
+        <item></item>
+        <item>Tie</item>
+        <item>Red Alliance</item>
+        <item>Blue Alliance</item>
     </string-array>
 </resources>

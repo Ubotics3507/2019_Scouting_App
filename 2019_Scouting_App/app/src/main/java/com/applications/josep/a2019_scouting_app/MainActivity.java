@@ -17,9 +17,17 @@ public class MainActivity extends AppCompatActivity {
         pitDataActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),PitDataActivity.class);
-                startActivity(startIntent);
+                Intent startIntentP = new Intent(getApplicationContext(),PitDataActivity.class);
+                startActivity(startIntentP);
+            }
+        });
 
+        final Button matchDataActivityBtn = (Button)findViewById(R.id.MatchDataCreate);
+        matchDataActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntentM = new Intent(getApplicationContext(),MatchDataActivity.class);
+                startActivity(startIntentM);
             }
         });
     }
