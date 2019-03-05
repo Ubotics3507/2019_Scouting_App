@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PitDataActivity" />
-        <activity android:name=".MatchDataActivity"></activity>
+        <activity android:name=".MatchDataActivity" />
+        <activity android:name=".TeamMatchScouting"></activity>
     </application>
 
 </manifest>

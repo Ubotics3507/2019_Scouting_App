@@ -1,8 +1,10 @@
 package com.applications.josep.a2019_scouting_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -15,103 +17,218 @@ import java.io.IOException;
 public class MatchDataActivity extends AppCompatActivity {
 
     String Text_File = "match_data.txt";
+    String red1;
+    String red2;
+    String red3;
+    String blue1;
+    String blue2;
+    String blue3;
+    String[][][] teamsOnMatch =
+            {{{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0011","0012","0110"},{"0330","0000","0000"}},
+            {{"0000","0010","0000"},{"0001","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}},
+            {{"0000","0000","0000"},{"0000","0000","0000"}}};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_data);
 
-        final Spinner matchNum = (Spinner) findViewById(R.id.matchNumSpinner);
+        //These are the team buttons
+        final Button red1Btn = (Button)findViewById(R.id.red1);
+        final Button red2Btn = (Button)findViewById(R.id.red2);
+        final Button red3Btn = (Button)findViewById(R.id.red3);
+        final Button blue1Btn = (Button)findViewById(R.id.blue1);
+        final Button blue2Btn = (Button)findViewById(R.id.blue2);
+        final Button blue3Btn = (Button)findViewById(R.id.blue3);
 
+        //This is for choosing the match number
+        final Spinner matchNum = (Spinner) findViewById(R.id.matchNumSpinner);
         ArrayAdapter<String> matchNumAd = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.match_num));
         matchNumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         matchNum.setAdapter(matchNumAd);
 
-        final Spinner redNum1 = (Spinner) findViewById(R.id.redTeam1);
-        ArrayAdapter<String> red1NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        red1NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        redNum1.setAdapter(red1NumAd);
-
-        final Spinner redNum2 = (Spinner) findViewById(R.id.redTeam2);
-        ArrayAdapter<String> red2NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        red2NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        redNum2.setAdapter(red2NumAd);
-
-        final Spinner redNum3 = (Spinner) findViewById(R.id.redTeam3);
-        ArrayAdapter<String> red3NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        red3NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        redNum3.setAdapter(red3NumAd);
-
-        final Spinner blueNum1 = (Spinner) findViewById(R.id.blueTeam1);
-        ArrayAdapter<String> blue1NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        blue1NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        blueNum1.setAdapter(blue1NumAd);
-
-        final Spinner blueNum2 = (Spinner) findViewById(R.id.blueTeam2);
-        ArrayAdapter<String> blue2NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        blue2NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        blueNum2.setAdapter(blue2NumAd);
-
-        final Spinner blueNum3 = (Spinner) findViewById(R.id.blueTeam3);
-        ArrayAdapter<String> blue3NumAd = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
-        blue3NumAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        blueNum3.setAdapter(blue3NumAd);
-
+        //These are the spinners
         final Spinner bestBlue = (Spinner) findViewById(R.id.bestBlueSpinner);
+        final Spinner bestRed = (Spinner) findViewById(R.id.bestRedSpinner);
+        final Spinner winner = (Spinner) findViewById(R.id.winningTeamSpinner);
+
+
+        //These set the spinner choices
         ArrayAdapter<String> bestBlueAd = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
         bestBlueAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bestBlue.setAdapter(bestBlueAd);
 
-        final Spinner bestRed = (Spinner) findViewById(R.id.bestRedSpinner);
         ArrayAdapter<String> bestRedAd = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.team_numbers));
         bestRedAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bestRed.setAdapter(bestRedAd);
 
-        final Spinner winner = (Spinner) findViewById(R.id.winningTeamSpinner);
         ArrayAdapter<String> winnerAd = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.winners));
         winnerAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         winner.setAdapter(winnerAd);
 
+
+        //This saves the match data
         final Button addMDataBtn = (Button)findViewById(R.id.addData);
         addMDataBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sWinner = winner.getSelectedItem().toString();
-                save("Match Num: " + matchNum.getSelectedItem().toString() + "\n");
+                save("MatchNum: " + matchNum.getSelectedItem().toString() + "\n");
                 if(sWinner.equals("Red Alliance")){
-                    save("Winners: " + redNum1.getSelectedItem().toString() + " " +
-                            redNum2.getSelectedItem().toString() + " " +
-                            redNum3.getSelectedItem().toString() + "\n");
-                    save("Losers: " + blueNum1.getSelectedItem().toString() + " " +
-                            blueNum2.getSelectedItem().toString() + " " +
-                            blueNum3.getSelectedItem().toString() + "\n");
+                    save("Winners: " + red1 + " " + red2 + " " + red3 + "\n");
+                    save("Losers: " + blue1 + " " + blue2 + " " + blue3 + "\n");
                 } else if(sWinner.equals("Blue Alliance")){
-                    save("Winners: " + blueNum1.getSelectedItem().toString() + " " +
-                            blueNum2.getSelectedItem().toString() + " " +
-                            blueNum3.getSelectedItem().toString() + "\n");
-                    save("Losers: " + redNum1.getSelectedItem().toString() + " " +
-                            redNum2.getSelectedItem().toString() + " " +
-                            redNum3.getSelectedItem().toString() + "\n");
+                    save("Winners: " + red1 + " " + red2 + " " + red3 + "\n");
+                    save("Losers: " + blue1 + " " + blue2 + " " + blue3 + "\n");
                 } else {
-                    save("Tie: " + redNum1.getSelectedItem().toString() + " " +
-                            redNum2.getSelectedItem().toString() + " " +
-                            redNum3.getSelectedItem().toString() + " " +
-                            blueNum1.getSelectedItem().toString() + " " +
-                            blueNum2.getSelectedItem().toString() + " " +
-                            blueNum3.getSelectedItem().toString() + "\n");
+                    save("Tied: " + red1 + " " + red2 + " " + red3 + " " + blue1 + " " +
+                            blue2 + " " + blue3 + "\n");
                 }
-                save("Best Blue: " + bestBlue.getSelectedItem().toString() + "\n");
-                save("Best Red: " + bestRed.getSelectedItem().toString() + "\n\n");
+                save("BestBlue: " + bestBlue.getSelectedItem().toString() + "\n");
+                save("BestRed: " + bestRed.getSelectedItem().toString() + "\n\n");
+            }
+        });
+
+        //This sets the match number and changes the team options
+        matchNum.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    red1Btn.setText("");
+                    red2Btn.setText("");
+                    red3Btn.setText("");
+                    blue1Btn.setText("");
+                    blue2Btn.setText("");
+                    blue3Btn.setText("");
+                } else{
+                    red1 = teamsOnMatch[position-1][0][0];
+                    red1Btn.setText(red1);
+                    red2 = teamsOnMatch[position-1][0][1];
+                    red2Btn.setText(red2);
+                    red3 = teamsOnMatch[position-1][0][2];
+                    red3Btn.setText(red3);
+                    blue1 = teamsOnMatch[position-1][1][0];
+                    blue1Btn.setText(blue1);
+                    blue2 = teamsOnMatch[position-1][1][1];
+                    blue2Btn.setText(blue2);
+                    blue3 = teamsOnMatch[position-1][1][2];
+                    blue3Btn.setText(blue3);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                red1Btn.setText("");
+                red2Btn.setText("");
+                red3Btn.setText("");
+                blue1Btn.setText("");
+                blue2Btn.setText("");
+                blue3Btn.setText("");
+            }
+        });
+
+        //These navigate to the teamMatchScouting page
+        red1Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",red1);
+                startActivity(startIntent);
+            }
+        });
+        red2Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",red2);
+                startActivity(startIntent);
+            }
+        });
+        red3Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",red3);
+                startActivity(startIntent);
+            }
+        });
+        blue1Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",blue1);
+                startActivity(startIntent);
+            }
+        });
+        blue2Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",blue2);
+                startActivity(startIntent);
+            }
+        });
+        blue3Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),TeamMatchScouting.class);
+                startIntent.putExtra("match_num",matchNum.getSelectedItem().toString());
+                startIntent.putExtra("team_num",blue3);
+                startActivity(startIntent);
             }
         });
     }

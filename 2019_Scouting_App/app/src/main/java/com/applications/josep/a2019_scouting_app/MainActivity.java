@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     String Text_File1 = "pit_data.txt";
     String Text_File2 = "match_data.txt";
+    String Text_File3 = "team_match_data.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             fos = openFileOutput(Text_File1,MODE_PRIVATE);
             fos.close();
             fos = openFileOutput(Text_File2,MODE_PRIVATE);
+            fos.close();
+            fos = openFileOutput(Text_File3,MODE_PRIVATE);
             fos.close();
             Toast.makeText(this,"data cleared",Toast.LENGTH_LONG).show();
         } catch (FileNotFoundException e) {
