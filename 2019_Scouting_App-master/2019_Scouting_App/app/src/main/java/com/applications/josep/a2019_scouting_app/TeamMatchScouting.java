@@ -88,24 +88,8 @@ public class TeamMatchScouting extends AppCompatActivity {
     }
 
     private void save(String text){
-        FileOutputStream fos = null;
-
-        try {
-            fos = openFileOutput(Text_File,MODE_APPEND);
-            fos.write(text.getBytes());
-            Toast.makeText(this,"Saved at " + getFilesDir() + "/" + Text_File,Toast.LENGTH_LONG).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(fos!=null){
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        Logger logger = new Logger("pit_data.txt");
+        logger.log(text);
+        Toast.makeText(getBaseContext(),"saved",Toast.LENGTH_LONG);
     }
 }
